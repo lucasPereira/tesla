@@ -1,6 +1,16 @@
 @charset "utf-8";
 
-#tesla {
-	background-color: #F4E4BC;
-	padding: 10px;
+#inicio {
+	z-index: 1;
+}
+
+#aldeias,
+#saque {
+	display: none;
+	z-index: 2
+}
+
+#aldeias:target,
+#saque:target {
+	display: block;
 }

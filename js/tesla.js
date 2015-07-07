@@ -1,34 +1,24 @@
 (function (contexto) {
 	"use strict";
 
-	function Gui() {
-		this.inicializar();
+	function Gui(html) {
+		this.inicializar(html);
 	}
 
-	Gui.prototype.inicializar = function () {
-		this.limparTudo();
-		this.criarRaiz();
+	Gui.prototype.inicializar = function (html) {
+		this.criarRaiz(html);
 	}
 
-	Gui.prototype.limparTudo = function () {
-		var head = document.querySelector("head");
+	Gui.prototype.criarRaiz = function (html) {
 		var body = document.querySelector("body");
-		head.innerHTML = "";
-		body.innerHTML = "";
-	}
-
-	Gui.prototype.criarRaiz = function () {
-		var raiz = document.querySelector("#tesla");
-		if (raiz != null) {
-			raiz.remove();
-		}
+		body.innerHTML = html;
 	}
 
 	function Tesla(html) {
 		this.inicializar(html);
 	}
 
-	Tesla.prototype.inicializar = function () {
+	Tesla.prototype.inicializar = function (html) {
 		this.gui = new Gui(html);
 	}
 
